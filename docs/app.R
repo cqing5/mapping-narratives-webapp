@@ -5,7 +5,7 @@ library(ggplot2)
 library(haven)
 
 # load & filter data
-data_main <- readRDS("data_coded_full_grace.rds") %>% filter(is.na(study))
+data_main <- readRDS("data_coded_full.rds") %>% filter(is.na(study))
 
 # replace placeholder in questions
 clean_q_label <- function(lbl) {gsub("\\[Field-program_info\\]", "these programs", lbl)}
@@ -166,7 +166,7 @@ codebook_link <- "https://drive.google.com/file/d/1t43JnC16S7mvpSZZ9-gxn0RcVefJi
 
 # UI
 ui <- navbarPage(
-  "Data Explorer",
+  "RSF Mapping Narratives Data Explorer",
   
   tabPanel("Overall Distribution",
            sidebarLayout(sidebarPanel(
